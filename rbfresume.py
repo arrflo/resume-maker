@@ -26,8 +26,8 @@ mname = jsondata ["middlename"]
 lname = jsondata ["lastname"]
 abt = jsondata ["about"]
 bday = jsondata ["birthday"]
-Age = jsondata ["age"]
-Sex = jsondata ["sex"]
+aage = jsondata ["age"]
+ssex = jsondata ["sex"]
 
 #contact deets
 eemail = jsondata ["email"]
