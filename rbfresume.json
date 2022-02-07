@@ -1,0 +1,22 @@
+{
+    "firstname" : "Romalyn",
+    "middlename" : "Bublo",
+    "lastname" : "Floranda",
+    "about" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "birthday" : "MM-DD-YYYY",
+    "age" : "XX",
+    "sex" : "Female",
+
+    "email" : "emailacct@gmail.com",
+    "facebook" : "fbacctko",
+    "instagram" : "igacctko",
+    "twitter" : "twtacctko",
+    "phone number" : "+639XXXX74846",
+
+    "skills": ["skill A", "skill B", "skill C"],
+    "college" : "Polytechnic University of the Philippines",
+    "college program" : "BS COMPUTER ENGINEERING",
+    "senior high school" : "Dr. Carlos S. Lanting College",
+    "strand" : "Science and Technology Engineering Math",
+    "junior high school" : "San Bartolome High School"
+}
