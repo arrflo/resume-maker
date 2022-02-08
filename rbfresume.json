@@ -14,7 +14,9 @@
     "pinterest" : "pintacctko",
     "phone number" : "+639XXXX74846",
 
-    "skills": ["skill A", "skill B", "skill C"],
+    "skills": "SKILL A",
+    "skills1" : "SKILL B",
+    "skills2" : "SKILL C",
     "college" : "Polytechnic University of the Philippines",
     "college program" : "BS COMPUTER ENGINEERING",
     "senior high school" : "Dr. Carlos S. Lanting College",
