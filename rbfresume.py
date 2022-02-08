@@ -4,10 +4,9 @@
 # 	- Your program should read the JSON file and write the details in the PDF
 # 	- The output file should be: LASTNAME_FIRSTNAME.pdf
 
-import email
+from ast import In
 import json
 import os
-from ast import In
 from textwrap import fill
 from turtle import fillcolor
 from fpdf import FPDF
@@ -23,9 +22,7 @@ with open(jsonfile) as data_file:
     jsondata = json.load(data_file)
 
 #personal deets
-fname = jsondata ["firstname"]
-mname = jsondata ["middlename"]
-lname = jsondata ["lastname"]
+nname = jsondata ["name"]
 abt = jsondata ["about"]
 bday = jsondata ["birthday"]
 aage = jsondata ["age"]
@@ -50,79 +47,87 @@ cprogram = jsondata ["college program"]
 shs = jsondata ["senior high school"]
 sstrand = jsondata ["strand"]
 jhs = jsondata ["junior high school"]
+elem = jsondata ["elementary"]
 
 
 #create pdf file
-pdf = FPDF ("P", "cm", "A4")
-pdf.add_page()
+pdf = FPDF ("P","cm","A4")
+pdf.add_page ()
 
 
-class PDF(pdf):
-    pdf.set_margins(2,2)
-    #for header
-    def header ():
-        pdf.set_font('Helvetica', 24)
-        pdf.set_fill_color(247, 229, 205)
-        pdf.set_text_color(40, 36, 29)
-        pdf.cell (0, 6, fname + mname + lname, In = 0, align='R', fill =1 )
-        pdf.image('sqrpic.jpg',10, 10, 6 )
-        pdf.ln(2)
-    #for body
-    def body ():
-        pdf.set_draw_color (40, 36, 29)
-        #about me part
-        pdf.set_font('Helvetica', 20)
-        pdf.set_fill_color(40, 36, 29)
-        pdf.set_text_color(247, 229, 205)
-        pdf.cell (0, 3, "ABOUT ME", align="C", In = 1, fill= 1 )
-        pdf.ln(1)
-        pdf.set_font('Helvetica', 16)
-        pdf.set_text_color(40, 36, 29)
-        pdf.set_fill_color(247, 229, 205)
-        pdf.cell (0, 4, abt, In = 1, align= "C", fill = 1)
-        pdf.ln(2)
-        pdf.set_font('Helvetica', 20)
-        pdf.set_fill_color(40, 36, 29)
-        pdf.set_text_color(247, 229, 205)
-        pdf.cell (0, 3, "SKILLS", align="C", In = 1, fill= 1 )
-        pdf.ln(1)
-        pdf.set_font('Helvetica', 16)
-        pdf.set_text_color(40, 36, 29)
-        pdf.set_fill_color(247, 229, 205)
-        pdf.cell (0, 1, sskills, In = 1, align= "C", fill = 1)
-        pdf.cell (0, 1, sskills1, In = 1, align= "C", fill = 1)
-        pdf.cell (0, 1, sskills2, In = 1, align= "C", fill = 1)
-        pdf.ln(2)
-        #personal deets
-        pdf.set_font('Helvetica', 20)
-        pdf.set_fill_color(40, 36, 29)
-        pdf.set_text_color(247, 229, 205)
-        pdf.cell (0, 3, "PERSONAL INFORMATION", align="C", In = 1, fill = 1 )
-        pdf.ln(1)
-        pdf.set_font('Helvetica', 16)
-        pdf.set_text_color(40, 36, 29)
-        pdf.set_fill_color(247, 229, 205)
-        pdf.cell (0, 1,'BIRTHDAY: '+ bday, fill = 1, In = 1, align= "C")
-        pdf.cell (0, 1, 'AGE: ' + aage, fill = 1, In = 1, align= "C")
-        pdf.cell (0, 1, 'SEX: '+ ssex, fill = 1, In = 1, align= "C")
-        pdf.ln(2)
-        #contact info
-        pdf.set_font('Helvetica', 20)
-        pdf.set_fill_color(40, 36, 29)
-        pdf.set_text_color(247, 229, 205)
-        pdf.cell (0, 3, "CONTACT INFORMATION", align="C", In = 1, fill = 1 )
-        pdf.ln(1)
-        pdf.set_font('Helvetica', 16)
-        pdf.set_text_color(40, 36, 29)
-        pdf.set_fill_color(247, 229, 205)
-        pdf.cell (0, 1, 'EMAIL: '+ eemail, fill = 1, In = 1, align= "C")
-        pdf.cell (0, 1, 'PHONE NUMBER: '+ pnumber, fill = 1, In = 1, align= "C")
-        pdf.cell (0, 1, 'FACEBOOK: '+ fb, fill = 1, In = 1, align= "C")
-        pdf.cell (0, 1, 'INSTAGRAM: '+ ig, fill = 1, In = 1, align= "C")
-        pdf.cell (0, 1, 'TWITTER: '+ twt, fill = 1, In = 1, align= "C")
-        pdf.cell (0, 1, 'PINTEREST: '+ pint, fill = 1, In = 1, align= "C")
-        pdf.ln(2)
-        #educational bg
-        
-    #for footer
+#for header
+pdf.set_font("helvetica", "B", 20)
+pdf.set_fill_color(247, 229, 205)
+pdf.cell(0, 5, "              " + nname, ln=1, align="L", fill=1)
+pdf.image('sqrpic.jpg', 15, 1, 5)
+pdf.ln(0.5)
+
+pdf.set_font("helvetica", "B", 15)
+pdf.set_text_color(247, 229, 205)
+pdf.set_fill_color(40, 36, 29)
+pdf.cell(0,1, "ABOUT ME", align="C", ln=1, fill=1)
+pdf.set_font("helvetica", "", 15)
+pdf.set_text_color(40, 36, 29)
+pdf.set_fill_color(247, 229, 205)
+pdf.cell(0,0.75, "" + abt, align="C", ln=1, fill=1)
+pdf.ln(0.5)
+
+pdf.set_font("helvetica", "B", 15)
+pdf.set_text_color(247, 229, 205)
+pdf.set_fill_color(40, 36, 29)
+pdf.cell(0,1, "SKILLS", align="C", ln=1, fill=1)
+pdf.set_font("helvetica", "", 15)
+pdf.set_text_color(40, 36, 29)
+pdf.set_fill_color(247, 229, 205)
+pdf.cell(0,0.75, "" + sskills, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "" + sskills1, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "" + sskills2, align="C", ln=1, fill=1)
+pdf.ln(0.5)
+
+pdf.set_font("helvetica", "B", 15)
+pdf.set_text_color(247, 229, 205)
+pdf.set_fill_color(40, 36, 29)
+pdf.cell(0,1, "PERSONAL INFORMATION", align="C", ln=1, fill=1)
+pdf.set_font("helvetica", "", 15)
+pdf.set_text_color(40, 36, 29)
+pdf.set_fill_color(247, 229, 205)
+pdf.cell(0,0.75, "BIRTHDAY: " + bday, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "AGE: " + aage, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "SEX: " + ssex, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "PHONE NUMBER: " + pnumber, align="C", ln=1, fill=1)
+pdf.ln(0.5)
+
+pdf.set_font("helvetica", "B", 15)
+pdf.set_text_color(247, 229, 205)
+pdf.set_fill_color(40, 36, 29)
+pdf.cell(0,1, "SOCIALS", align="C", ln=1, fill=1)
+pdf.set_font("helvetica", "", 15)
+pdf.set_text_color(40, 36, 29)
+pdf.set_fill_color(247, 229, 205)
+pdf.cell(0,0.75, "EMAIL: " + eemail, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "FACEBOOK: " + fb, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "INSTAGRAM: " + ig, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "TWITTER: " + twt, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "PINTEREST: " + pint, align="C", ln=1, fill=1)
+pdf.ln(0.5)
+
+pdf.set_font("helvetica", "B", 15)
+pdf.set_text_color(247, 229, 205)
+pdf.set_fill_color(40, 36, 29)
+pdf.cell(0,1, "EDUCATIONAL BACKGROUND", align="C", ln=1, fill=1)
+pdf.set_font("helvetica", "", 15)
+pdf.set_text_color(40, 36, 29)
+pdf.set_fill_color(247, 229, 205)
+pdf.cell(0,0.75, "COLLEGE: " + ccollege, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "COLLEGE PROGRAM: " + cprogram, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "SHS: " + shs, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "SHS STRAND: " + sstrand, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "JHS: " + jhs, align="C", ln=1, fill=1)
+pdf.cell(0,0.75, "ELEMENTARY: " + elem, align="C", ln=1, fill=1)
+
+
+pdf.output ("FLORANDA_ROMALYN.pdf")
+
+
+
 
