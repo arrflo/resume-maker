@@ -58,7 +58,7 @@ pdf.add_page ()
 pdf.set_font("helvetica", "B", 20)
 pdf.set_text_color(40, 36, 29)
 pdf.set_fill_color(247, 229, 205)
-pdf.cell(0, 5, "            " + nname, ln=1, align="L", fill=1)
+pdf.cell(0, 5, "              " + nname, ln=1, align="L", fill=1)
 pdf.image('sqrpic.jpg', 15, 1, 5)
 pdf.ln(0.55)
 
