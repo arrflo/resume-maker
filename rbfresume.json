@@ -1,8 +1,6 @@
 {
-    "firstname" : "Romalyn",
-    "middlename" : "Bublo",
-    "lastname" : "Floranda",
-    "about" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "name" : "Romalyn Bublo Floranda",
+    "about" : "LOREM IPSUM DOLOR SIT AMET, CONSECTITUR",
     "birthday" : "MM-DD-YYYY",
     "age" : "XX",
     "sex" : "Female",
@@ -21,5 +19,6 @@
     "college program" : "BS COMPUTER ENGINEERING",
     "senior high school" : "Dr. Carlos S. Lanting College",
     "strand" : "Science and Technology Engineering Math",
-    "junior high school" : "San Bartolome High School"
+    "junior high school" : "San Bartolome High School",
+    "elementary" : "Lucas R. Pascual Memorial Elementary School"
 }
