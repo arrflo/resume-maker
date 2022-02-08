@@ -47,7 +47,6 @@ cprogram = jsondata ["college program"]
 shs = jsondata ["senior high school"]
 sstrand = jsondata ["strand"]
 jhs = jsondata ["junior high school"]
-elem = jsondata ["elementary"]
 
 
 #create pdf file
@@ -57,10 +56,11 @@ pdf.add_page ()
 
 #for header
 pdf.set_font("helvetica", "B", 20)
+pdf.set_text_color(40, 36, 29)
 pdf.set_fill_color(247, 229, 205)
-pdf.cell(0, 5, "" + nname, ln=1, align="L", fill=1)
+pdf.cell(0, 5, "            " + nname, ln=1, align="L", fill=1)
 pdf.image('sqrpic.jpg', 15, 1, 5)
-pdf.ln(0.5)
+pdf.ln(0.55)
 
 pdf.set_font("helvetica", "B", 15)
 pdf.set_text_color(247, 229, 205)
@@ -70,7 +70,7 @@ pdf.set_font("helvetica", "", 15)
 pdf.set_text_color(40, 36, 29)
 pdf.set_fill_color(247, 229, 205)
 pdf.cell(0,0.75, "" + abt, align="C", ln=1, fill=1)
-pdf.ln(0.5)
+pdf.ln(0.55)
 
 pdf.set_font("helvetica", "B", 15)
 pdf.set_text_color(247, 229, 205)
@@ -82,7 +82,7 @@ pdf.set_fill_color(247, 229, 205)
 pdf.cell(0,0.75, "" + sskills, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "" + sskills1, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "" + sskills2, align="C", ln=1, fill=1)
-pdf.ln(0.5)
+pdf.ln(0.55)
 
 pdf.set_font("helvetica", "B", 15)
 pdf.set_text_color(247, 229, 205)
@@ -95,7 +95,7 @@ pdf.cell(0,0.75, "BIRTHDAY: " + bday, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "AGE: " + aage, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "SEX: " + ssex, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "PHONE NUMBER: " + pnumber, align="C", ln=1, fill=1)
-pdf.ln(0.5)
+pdf.ln(0.55)
 
 pdf.set_font("helvetica", "B", 15)
 pdf.set_text_color(247, 229, 205)
@@ -109,7 +109,7 @@ pdf.cell(0,0.75, "FACEBOOK: " + fb, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "INSTAGRAM: " + ig, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "TWITTER: " + twt, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "PINTEREST: " + pint, align="C", ln=1, fill=1)
-pdf.ln(0.5)
+pdf.ln(0.55)
 
 pdf.set_font("helvetica", "B", 15)
 pdf.set_text_color(247, 229, 205)
