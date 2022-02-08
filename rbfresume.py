@@ -58,7 +58,7 @@ pdf.add_page ()
 #for header
 pdf.set_font("helvetica", "B", 20)
 pdf.set_fill_color(247, 229, 205)
-pdf.cell(0, 5, "              " + nname, ln=1, align="L", fill=1)
+pdf.cell(0, 5, "" + nname, ln=1, align="L", fill=1)
 pdf.image('sqrpic.jpg', 15, 1, 5)
 pdf.ln(0.5)
 
@@ -123,7 +123,6 @@ pdf.cell(0,0.75, "COLLEGE PROGRAM: " + cprogram, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "SHS: " + shs, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "SHS STRAND: " + sstrand, align="C", ln=1, fill=1)
 pdf.cell(0,0.75, "JHS: " + jhs, align="C", ln=1, fill=1)
-pdf.cell(0,0.75, "ELEMENTARY: " + elem, align="C", ln=1, fill=1)
 
 
 pdf.output ("FLORANDA_ROMALYN.pdf")
